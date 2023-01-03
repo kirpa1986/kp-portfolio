@@ -1,0 +1,5 @@
+1. Home page content
+2. Menu
+3. Portfolio page with projects
+4. Contact page
+5. Refactor using React and SCSS

@@ -7,24 +7,25 @@
 }
 
 :root {
-  --top-curtain-height: 6rem;
-  --projectors-height: 5rem; 
+  --top-curtain-height: 4rem;
+  --projectors-height: 4rem; 
   --menu-ball-diameter: 5rem;
   --menu-ball-right-indent: 2rem;
   --central-decoration-dimater: 13rem;
   --logo-font-size: 2rem;
   --balls-internal-inset: 0.5rem;
-  --footer-floor-height: 13rem;
+  --footer-floor-height: 7rem;
   --footer-step-height: 1rem;
   --footer-podium-height: 5rem;
   --footer-height: calc(var(--footer-floor-height) + var(--footer-step-height) + var(--footer-podium-height));
 
   --colon-width: 2rem;
-  --colon-deep: 5rem;
+  --colon-deep: 4rem;
+  --wall-indent-multiplier: 2;
   --colon-radius: calc(var(--colon-width)/2);
   --wall-width: calc(var(--colon-width) + var(--colon-deep) - var(--colon-radius));
-  --colon-from-edge-deep: 1.5rem;
-  --main-curtain-freq: 10%;
+  --colon-from-edge-deep: 1rem;
+  --main-curtain-freq: 5%;
   --main-curtain-bottom-border-radius: 1.5rem;
   --colon-height: calc(100vh - var(--colon-from-edge-deep) - var(--footer-step-height) - var(--footer-podium-height));
   --main-curtain-indent-height: calc(var(--colon-from-edge-deep) + var(--colon-radius));
@@ -321,8 +322,7 @@ Moving both lines closer */
 }
 
 .scene-curtain .main-curtain h1 span {
-  animation: welcome-letter-animation 0.5s;
-
+  animation: welcome-letter-animation 1.5s infinite;
 }
 
 
@@ -470,11 +470,11 @@ Moving both lines closer */
 
 }
 .wall.left .side {
-  clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% + var(--colon-from-edge-deep) + var(--colon-radius)*3 - var(--footer-floor-height)), 0% 100%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% + var(--colon-from-edge-deep) + var(--colon-radius)*var(--wall-indent-multiplier) - var(--footer-floor-height)), 0% 100%);
   left: calc(var(--colon-width)*0.8);
 }
 .wall.right .side {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% calc(100% + var(--colon-from-edge-deep) + var(--colon-radius)*3 - var(--footer-floor-height)));
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% calc(100% + var(--colon-from-edge-deep) + var(--colon-radius)*var(--wall-indent-multiplier) - var(--footer-floor-height)));
   right: calc(var(--colon-width)*0.8);
 }
 
@@ -526,7 +526,7 @@ Moving both lines closer */
   position: relative;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.3));
+  background: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.8) 40%, rgba(0,0,0,0));
 }
 .scene .shadow-sides {
   position: absolute;
@@ -866,8 +866,17 @@ Moving both lines closer */
   }
 }
 
-/* @keyframes rolling {
-  100% {
-    transform: rotate(360deg);
+@media (max-width: 768px) {
+  :root {
+    --main-curtain-freq: 7%;
+    --colon-deep: 3rem;
+    --menu-ball-right-indent: 1rem;
   }
-} */
+}
+
+@media (max-width: 576px) {
+  :root {
+    --main-curtain-freq: 10%;
+    --footer-floor-height: 10rem;
+  }
+}

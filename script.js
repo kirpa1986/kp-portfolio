@@ -6,8 +6,8 @@ const welcome = document.querySelector('.main-curtain h1');
 
 setTimeout(() => {
   delay = 50;
-  welcome.innerHTML = welcome.textContent.split('').map((letter, ind) => {
-    return `<span style="animation-delay: ${delay * ind}ms">${letter}</span>`
+  welcome.innerHTML = welcome.textContent.split('').map((letter, indx) => {
+    return `<span style="animation-delay: ${delay * indx}ms">${letter}</span>`
   }).join('');
 },1000)
 
