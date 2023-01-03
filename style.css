@@ -28,11 +28,11 @@
   --main-curtain-freq: 5%;
   --main-curtain-bottom-border-radius: 1.5rem;
   --colon-height: calc(100% - var(--footer-height) + var(--footer-floor-height) - var(--colon-from-edge-deep));
-  /* --colon-height: calc(100% - var(--colon-from-edge-deep) - var(--footer-step-height) - var(--footer-podium-height)); */
   --main-curtain-indent-height: calc(var(--colon-from-edge-deep) + var(--colon-radius));
   --main-curtain-indent-width: calc(var(--colon-width) - var(--colon-radius));
   --main-curtain-width: calc(100% - 2*var(--main-curtain-indent-width));
-  --main-curtain-height: calc(100vh - var(--main-curtain-indent-height) - var(--footer-step-height) - var(--footer-podium-height) - 10px);
+  --main-curtain-height: calc(100% - var(--main-curtain-indent-height) - var(--footer-podium-height) - var(--footer-step-height));
+  /* --main-curtain-height: calc(100% - var(--main-curtain-indent-height) - var(--footer-step-height) - var(--footer-podium-height) - 10px); */
   --scene-height: calc(100% - var(--footer-height));
   --scene-width: calc(100% - var(--wall-width)*2);
 }
@@ -318,7 +318,7 @@ Moving both lines closer */
   color: #f4f4f4;
   font-size: 5rem;
 }
-.scene-curtain.open .main-curtain {
+.scene-curtain.open ~ .main-curtain {
   height: 0%;
 }
 
@@ -867,7 +867,7 @@ Moving both lines closer */
   }
 }
 
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
   :root {
     --main-curtain-freq: 7%;
     --colon-deep: 3rem;
@@ -878,6 +878,6 @@ Moving both lines closer */
 @media (max-width: 576px) {
   :root {
     --main-curtain-freq: 10%;
-    --footer-floor-height: 10rem;
+    --footer-floor-height: 8rem;
   }
-} */
+}
