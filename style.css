@@ -20,19 +20,20 @@
   --footer-height: calc(var(--footer-floor-height) + var(--footer-step-height) + var(--footer-podium-height));
 
   --colon-width: 2rem;
-  --colon-deep: 4rem;
+  --colon-deep: 3rem;
   --wall-indent-multiplier: 2;
   --colon-radius: calc(var(--colon-width)/2);
   --wall-width: calc(var(--colon-width) + var(--colon-deep) - var(--colon-radius));
   --colon-from-edge-deep: 1rem;
   --main-curtain-freq: 5%;
   --main-curtain-bottom-border-radius: 1.5rem;
-  --colon-height: calc(100vh - var(--colon-from-edge-deep) - var(--footer-step-height) - var(--footer-podium-height));
+  --colon-height: calc(100% - var(--footer-height) + var(--footer-floor-height) - var(--colon-from-edge-deep));
+  /* --colon-height: calc(100% - var(--colon-from-edge-deep) - var(--footer-step-height) - var(--footer-podium-height)); */
   --main-curtain-indent-height: calc(var(--colon-from-edge-deep) + var(--colon-radius));
   --main-curtain-indent-width: calc(var(--colon-width) - var(--colon-radius));
   --main-curtain-width: calc(100% - 2*var(--main-curtain-indent-width));
   --main-curtain-height: calc(100vh - var(--main-curtain-indent-height) - var(--footer-step-height) - var(--footer-podium-height) - 10px);
-  --scene-height: calc(100vh - var(--footer-height));
+  --scene-height: calc(100% - var(--footer-height));
   --scene-width: calc(100% - var(--wall-width)*2);
 }
 
@@ -441,7 +442,7 @@ Moving both lines closer */
 
 }
 .wall.left .front {
-  left:0;
+  left: 0;
   background: linear-gradient(to right, rgb(37, 7, 7), rgb(78, 20, 20) 60%, rgb(26, 3, 3)); 
   border-bottom-right-radius: calc(var(--colon-width)/2);
 }
