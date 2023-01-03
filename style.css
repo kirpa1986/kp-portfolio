@@ -866,7 +866,7 @@ Moving both lines closer */
   }
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   :root {
     --main-curtain-freq: 7%;
     --colon-deep: 3rem;
@@ -879,4 +879,4 @@ Moving both lines closer */
     --main-curtain-freq: 10%;
     --footer-floor-height: 10rem;
   }
-}
+} */
